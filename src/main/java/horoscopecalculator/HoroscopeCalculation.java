@@ -4,43 +4,43 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class BurcHesaplama {
+public class HoroscopeCalculation {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Doğum tarihinizi girin (GG.AA.YYYY): ");
+        System.out.print("Enter your date of birth (DD.MM.YYYY): ");
         String date = input.nextLine();
-        LocalDate dogumGünü = LocalDate.parse(date, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        String burc = burcHesapla(dogumGünü);
-        System.out.println("Burcunuz: " + burc); input.close();
+        LocalDate birthDay = LocalDate.parse(date, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        String horoscope = burcHesapla(birthDay);
+        System.out.println("Your horoscope: " + horoscope); input.close();
     }
     public static String burcHesapla(LocalDate birthDate) {
         int month = birthDate.getMonthValue();
         int day = birthDate.getDayOfMonth();
         if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
-            return "Koç Burcu";
+            return "Aries";
         } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
-            return "Boğa Burcu";
+            return "Taurus";
         } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
-            return "İkizler Burcu";
+            return "Gemini";
         } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
-            return "Yengeç Burcu";
+            return "Cancer";
         } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
-            return "Aslan Burcu";
+            return "Leon";
         } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
-            return "Başak Burcu";
+            return "Virgo";
         } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
-            return "Terazi Burcu";
+            return "Libra";
         } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
-            return "Akrep Burcu";
+            return "Scorpio";
         } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
-            return "Yay Burcu";
+            return "Sagittarius";
         } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
-            return "Oğlak Burcu";
+            return "Capricorn";
         } else if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
-            return "Kova Burcu";
+            return "Aquarius";
         } else {
-            return "Balık Burcu";
+            return "Pisces";
         }
     }
 
